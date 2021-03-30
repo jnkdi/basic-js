@@ -7,22 +7,22 @@ module.exports = function repeater(str, options) {
     additionSeparator = '|',
   } = options;
 
-  const additionStr = formStr(addition, additionRepeatTimes, additionSeparator)
+  const additionStr = formStr(addition, additionRepeatTimes, additionSeparator);
 
-  return formStr(str, repeatTimes, separator, additionStr)
+  return formStr(str, repeatTimes, separator, additionStr);
 
   function formStr(str, amount, separator, addition) {
-    const arr = []
+    const arr = [];
 
     for (let i = 0; i < amount; i++) {
       if (addition === undefined) {
-        arr.push(String(str), i === amount - 1 ? '' : separator)
+        arr.push(String(str), i === amount - 1 ? '' : separator);
       } else {
-        arr.push(String(str), addition, i === amount - 1 ? '' : separator)
+        arr.push(String(str), addition, i === amount - 1 ? '' : separator);
       }
     }
 
-    return arr.join('')
+    return arr.join('');
   }
 };
   
